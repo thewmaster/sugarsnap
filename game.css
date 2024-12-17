@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    text-align: center;
+  }
+  
+  .game-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .farm-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-gap: 10px;
+    margin: 20px 0;
+    justify-content: center;
+  }
+  
+  .farm-cell {
+    width: 100px;
+    height: 100px;
+    background-color: #e5e5e5;
+    border: 2px solid #ccc;
+    position: relative;
+  }
+  
+  .farm-cell.planted {
+    background-color: #c2f0c2;
+  }
+  
+  .farm-cell.watered {
+    background-color: #80e0ff;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+  }

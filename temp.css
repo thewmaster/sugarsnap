@@ -1,0 +1,43 @@
+/* Basic Reset */
+* {
+    margin: 5px;
+    padding: 5px;
+}
+
+body {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: f;
+    padding: 2px;
+    background-color: #f0f0f0;
+
+    
+}
+
+/* Container for both images */
+.image-container {
+   
+/* Set the size of the container */
+
+/* Top image (the one visible initially) */
+.top-image {
+
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+/* Bottom image (the one revealed on hover) */
+.bottom-image {
+
+
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+/* Reveal the bottom image on hover */
+.image-container:hover .top-image {
+    opacity: 0; /* Hide top image on hover */
+}
+
+.image-container:hover .bottom-image {
+    opacity: 1; /* Show bottom image on hover */
+}

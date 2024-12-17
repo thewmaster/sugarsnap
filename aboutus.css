@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.game-container {
+    position: relative;
+}
+
+canvas {
+    border: 2px solid #000;
+    background-color: #e0e0e0;
+    display: block;
+}
+
+.basket {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background-color: brown;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -50px;
+    border-radius: 5px;
+}

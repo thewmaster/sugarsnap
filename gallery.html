@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .modal img {
+      width: 100%;
+      height: auto;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #fff;
+      border: none;
+      font-size: 20px;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+    
+
+  <div class="gallery" id="gallery"></div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Large Image">
+    </div>
+  </div>
+
+  <script>
+    // Array of image URLs (you can replace these with your own image URLs)
+    const images = [
+      'Pics/surp.png',
+      'Pics/surp.png',
+      'Pics/surp.png',
+      'Pics/surp.png',
+      'Pics/surp.png',
+      'Pics/surp.png',
+      'Pics/surp.png',
+      'Pics/surp.png',
+      'Pics/surp.png',
+      'Pics/surp.png',
+      'Pics/surp.png',
+      'Pics/surp.png',
+      'Pics/surp.png',  
+      'Pics/surp.png',
+      'Pics/surp.png',
+      'Pics/surp.png',
+      'Pics/surp.png',
+      'Pics/surp.png',
+    ];
+
+    // Function to create gallery items
+    function createGallery() {
+      const galleryContainer = document.getElementById('gallery');
+      galleryContainer.innerHTML = ''; // Clear any existing content
+
+      images.forEach((imgSrc, index) => {
+        const imgElement = document.createElement('img');
+        imgElement.src = imgSrc;
+        imgElement.alt = `Image ${index + 1}`;
+        imgElement.classList.add('gallery-image');
+        imgElement.addEventListener('click', () => openModal(imgSrc));
+
+        galleryContainer.appendChild(imgElement);
+      });
+    }
+
+    // Function to open modal with selected image
+    function openModal(imgSrc) {
+      const modal = document.getElementById('modal');
+      const modalImage = document.getElementById('modalImage');
+
+      modalImage.src = imgSrc;
+      modal.style.display = 'flex'; // Show the modal
+    }
+
+    // Function to close modal
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      modal.style.display = 'none'; // Hide the modal
+    }
+
+    // Event listener for close button
+    document.getElementById('closeBtn').addEventListener('click', closeModal);
+
+    // Initialize the gallery when the page loads
+    createGallery();
+  </script>
+    <a style="min-height: 100px;min-width: 100px; margin-right: 1px; margin-top: 50px;position: fixed; " href="index.html"><img class="sspp" src="Pics/bandaid.png" alt="bandaid" ></a>
+
+</body>
+</html>
