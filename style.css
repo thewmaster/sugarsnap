@@ -26,9 +26,7 @@ html {font-size: 100%;
   flex-direction: row;
   padding: 5px;
   position: sticky;
-  border: 2px solid rgb(231, 208, 2);
-  border-radius: 6px;
-  background-color: #3e0a81;
+
   font-size: xx-large;
   text-align: center;
   white-space: nowrap;
@@ -40,10 +38,31 @@ html {font-size: 100%;
   
 }
 
+.guidebo {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  position: fixed;
+
+  font-size: xx-large;
+  text-align: center;
+  white-space: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 5px;
+  max-width: 50%;
+  right: 45%;
+  left: 45%;
+}
+
 #guideb{
   background-image: url(/Pics/button.png);
   padding: 1px;
-  color: white;
+  color: rgb(43, 255, 0);
   background-size:contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -52,30 +71,31 @@ html {font-size: 100%;
   min-width: fit-content;
   min-height: fit-content;
   text-decoration: none;
+  font-size: larger;
   display: inline-block;
   background: transparent;
-  padding: 5px;
 
 
-
-}
-
-.lib{
-  background-color: rgb(0, 129, 43);
-  color: #00BF63;
 
 }
 
 .sspp{
-  max-width: 100px; 
-  max-height: 100px;  
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
+  max-width: 10%; 
+  max-height: 10%;  
+  position: fixed;
+  top: 15px;
+  right:15px;
 }
 
+.lib{
+  background-color:#c8ff00;
+  color:  rgb(79, 255, 138);
+
+}
+
+
+
 .album{
-  background-image: url(Pics/jungle.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -84,7 +104,7 @@ html {font-size: 100%;
   align-items: center;
   margin-left:auto;
   margin-right: auto;
-  color: #00BF63;
+  background-color: #00BF63;
   max-width: 60%;
   max-width: 100%;
   max-height: 100%;
@@ -104,9 +124,10 @@ display: flex;
 align-items: center;
 align-content: center;
 justify-content: center;
-max-width: fit-content;
-margin-left: 50%;
-margin-right: 50%;
+max-width: 100%;
+max-height: 100%;
+
+
 }
 
 
@@ -151,18 +172,15 @@ margin-right: 50%;
 
 .tour{
     text-align: center;
-    justify-content: center;
-    align-items: center;
-    margin-left:auto;
-    margin-right: auto;
-    color: #00BF63;
-    max-width: 60%;
+    color: #d9ff00;
     background-image: url(/Pics/scheduleb.png);
     background-repeat: no-repeat;
-    max-width: 100%;
-    max-height: 100%;
-    background-size: cover;
-    
+    background-size: round;   
+}
+table {
+  width: auto;
+  height: auto;
+  overflow: auto;
 }
 
 table{
@@ -215,27 +233,6 @@ tfoot td {
   background: linear-gradient(to bottom, (#04b14f / 10%),(#003316 / 100%));
   border: 3px solid #2F6145;
 }
-
-
-
-.guidebo {
-  border: 8px;
-  border-color: #000000;
-  color: #DB1ADD;
-  background-color: #350281;;
-  display: flex;
-  flex-direction: row;
-  padding: 1%;
-  text-align: center;
-  border-radius: 4%;
-  position: fixed; 
-
-  bottom: 0; 
-  width: auto; 
-}
-
-/*  */
-
 
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
@@ -351,12 +348,8 @@ tfoot td {
 
 .fall{
   color: #00BF63;
-  margin-left: 50%;
-  margin-right: 50%;
-    min-width: 100%;
+      min-width: 100%;
     position: absolute;
-    margin-left: 5%;
-    margin-top: 20%;
 }
 
 
