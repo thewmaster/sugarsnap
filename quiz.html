@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Slinky">
+    <meta name="description" content="The music you want to hear">
+    <title>Sugar Snap Peas</title>
+    <link rel="icon" href="pics/peai.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel="stylesheet">
+    <link rel="stylesheet" href="quiz.css" type="text/css">
+</head>
+
+<body>
+
+    <img id="bg-gif" src="Pics/dvp.gif" alt="background">
+
+    <a href="index.html" class="sspp"><img src="Pics/bandaid.png" alt="sugar snap peas"></a>
+
+    <div id="quiz-wrapper">
+        <div class="quiz-header">
+            <h2>what kind of peas are you</h2>
+        </div>
+
+        <div id="question-card">
+            <div class="q-number" id="q-number"></div>
+
+            <div id="q-image"></div>
+
+            <div class="q-text" id="q-text"></div>
+
+            <div class="options" id="options"></div>
+
+            <div class="nav-row">
+                <button class="nav-btn" id="btn-back" onclick="goBack()">← back</button>
+                <button class="nav-btn primary" id="btn-next" onclick="goNext()">next →</button>
+            </div>
+        </div>
+
+        <div id="result-card">
+            <div class="result-badge">your result</div>
+            <img id="result-image" src="" alt="..." style="width:140px;height:140px;object-fit:cover;border-radius:50%;margin:0 auto 24px;display:block;">
+            <div class="result-title" id="result-title"></div>
+            <div class="result-desc" id="result-desc"></div>
+            <button class="retake-btn" onclick="restartQuiz()">↺ retake quiz</button>
+        </div>
+    </div>
+
+<script>
+
+const questions = [
+    {
+        text: "you get in the car. What's the first thing you do?",
+        imageHint: "Pics/quizPics/car.JPG",
+        options: [
+            { label: "Drive",                               scores: { mashed: 2, boiled: 1 } },
+            { label: "Put on my seatbelt",                  scores: { peon: 2, fresh: 1 } },
+            { label: "Start playing the latest Sugar Snap Peas EP", scores: { peon: 1, creamy: 1 } },
+            { label: "I don't have a driver's license",         scores: { fresh: 2, peon: 1 } },
+        ]
+    },
+    {
+        text: "What would you do if you found a $20 bill?",
+        imageHint: "Pics/quizPics/20.JPG",
+        options: [
+            { label: "Find the rightful owner annd if you can't then rip up the bill and throw it away",scores: { peon: 2, fresh: 1 } },
+            { label: "Buy Jade I*A",           scores: { mashed: 1, creamy: 2 } },
+            { label: "Buy tickets to the peas show", scores: { peon: 2, boiled: 1 } },
+            { label: "Buy Peas merch",         scores: { peon: 1, fresh: 2 } },
+        ]
+    },
+    {
+        text: "What is your favorite color?",
+        imageHint: "Pics/quizPics/green.jpg",
+        options: [
+            { label: "Dark Mysterious Green",       scores: { mashed: 2, boiled: 1 } },
+            { label: "Pea Green",         scores: { peon: 2, fresh: 1 } },
+            { label: "Lime Green",                     scores: { creamy: 2, boiled: 1 } },
+            { label: "Mint Green",    scores: { creamy: 2, peon: 1 } },
+        ]
+    },
+    {
+        text: "What is this band called?",
+        imageHint: "Pics/head.gif",
+        options: [
+            { label: "Snap Pea Crisps",         scores: { mashed: 1, creamy: 2 } },
+            { label: "Sugar Snap Peas",           scores: { peon: 2, creamy: 1 } },
+            { label: "Just 'The Peas'",         scores: { peon: 1, creamy: 2 } },
+            { label: "Duncan",                scores: { mashed: 2, fresh: 1 } },
+        ]
+    },
+    {
+        text: "What is your ?",
+        imageHint: "Pics/quizPics/your.JPG",
+        options: [
+            { label: "Every time",               scores: { peon: 2, fresh: 1 } },
+            { label: "Only on rainy days",        scores: { creamy: 2, boiled: 1 } },
+            { label: "I don't know",          scores: { boiled: 2, mashed: 1 } },
+            { label: "there is a memory attached to it",   scores: { fresh: 2, creamy: 1 } },
+        ]
+    },
+    {
+        text: "it's 2am and you can't sleep. what do you do?",
+        imageHint: "Pics/quizPics/sleep.gif",
+        options: [
+            { label: "Drink as much milk as possible",    scores: { peon: 2, peon: 1 } },
+            { label: "Drink a moderate amount of milk",  scores: { fresh: 2, creamy: 1 } },
+            { label: "Drink some milk",                 scores: { mashed: 1, peon: 2 } },
+            { label: "go to sleep",   scores: { boiled: 2, creamy: 2 } },
+        ]
+    }
+];
+
+// ─────────────────────────────────────────────
+//  RESULTS
+//  imageHint shows the suggested filename in the placeholder.
+//  To add a photo, swap the placeholder div in the HTML with an <img> tag.
+// ─────────────────────────────────────────────
+const results = {
+    mashed: {
+        title: "Mashed Pea",
+        desc: "You're definetly fried af",
+        imageHint: "Pics/matt.png"
+    },
+    boiled: {
+        title: "Boiled Pea",
+        desc: "You should be in jail",
+        imageHint: "Pics/dunc.png"
+    },
+    peon: {
+        title: "the Peon",
+        desc: "You are a true fan",
+        imageHint: "Pics/phil.png"
+    },
+    fresh: {
+        title: "Fresh Pea",
+        desc: "You have the lust for life",
+        imageHint: "Pics/eric.png"
+    },
+    creamy: {
+        title: "Creamy Pea",
+        desc: "The elite pea princess. Never change.",
+        imageHint: "Pics/quizPics/gardo.jpeg"
+    }
+};
+
+// ─────────────────────────────────────────────
+//  STATE
+// ─────────────────────────────────────────────
+let current = 0;
+let answers = new Array(questions.length).fill(null);
+
+function renderQuestion() {
+
+    const q = questions[current];
+
+    const qImage = document.getElementById('q-image');
+    if (q.imageHint) {
+        qImage.innerHTML = `<img src="${q.imageHint}" alt="question image" style="width:100%; height:300px; object-fit:cover; border-radius:8px; margin-bottom:20px;">`;
+    } else {
+        qImage.innerHTML = `<span class="ph-icon">🖼</span><span>no image</span>`;
+    }
+
+    document.getElementById('q-number').textContent =
+        `question ${current + 1} of ${questions.length}`;
+    document.getElementById('q-text').textContent = q.text;
+
+    const opts = document.getElementById('options');
+    opts.innerHTML = '';
+    ['A','B','C','D'].forEach((letter, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn' + (answers[current] === i ? ' selected' : '');
+        btn.innerHTML = `<span class="option-letter">${letter}</span> ${q.options[i].label}`;
+        btn.onclick = () => selectOption(i);
+        opts.appendChild(btn);
+    });
+
+    document.getElementById('btn-back').disabled = (current === 0);
+    document.getElementById('btn-next').textContent =
+        (current === questions.length - 1) ? 'see result →' : 'next →';
+
+    // re-trigger animation
+    const card = document.getElementById('question-card');
+    card.style.animation = 'none';
+    card.offsetHeight;
+    card.style.animation = 'slideIn 0.35s ease both';
+}
+
+function selectOption(index) {
+    answers[current] = index;
+    document.querySelectorAll('.option-btn').forEach((btn, i) => {
+        btn.classList.toggle('selected', i === index);
+    });
+}
+
+function goNext() {
+    if (answers[current] === null) {
+        // nudge if nothing selected
+        const card = document.getElementById('question-card');
+        card.style.transition = 'transform 0.08s';
+        card.style.transform = 'translateX(-6px)';
+        setTimeout(() => { card.style.transform = 'translateX(6px)'; }, 80);
+        setTimeout(() => { card.style.transform = 'translateX(0)'; }, 160);
+        return;
+    }
+    if (current < questions.length - 1) {
+        current++;
+        renderQuestion();
+    } else {
+        showResult();
+    }
+}
+
+function goBack() {
+    if (current > 0) { current--; renderQuestion(); }
+}
+
+function showResult() {
+    const scores = { mashed: 0, peon: 0, boiled: 0, creamy: 0, fresh: 0 };
+    answers.forEach((ansIdx, qIdx) => {
+        if (ansIdx === null) return;
+        const s = questions[qIdx].options[ansIdx].scores;
+        Object.keys(s).forEach(k => { scores[k] += s[k]; });
+    });
+
+    const winner = Object.keys(scores).reduce((a, b) => scores[a] >= scores[b] ? a : b);
+    const r = results[winner];
+    console.log(r)
+
+    document.getElementById('result-title').textContent = r.title;
+    document.getElementById('result-desc').textContent  = r.desc;
+    document.getElementById('result-image').src = r.imageHint; 
+
+    document.getElementById('question-card').style.display = 'none';
+    const rc = document.getElementById('result-card');
+    rc.style.display = 'block';
+    rc.style.animation = 'none';
+    rc.offsetHeight;
+    rc.style.animation = 'slideIn 0.4s ease both';
+}
+
+function restartQuiz() {
+    current = 0;
+    answers = new Array(questions.length).fill(null);
+    document.getElementById('result-card').style.display = 'none';
+    document.getElementById('question-card').style.display = 'block';
+    renderQuestion();
+}
+
+renderQuestion();
+</script>
+
+</body>
+</html>
