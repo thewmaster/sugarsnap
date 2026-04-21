@@ -9,6 +9,8 @@
     --card-bg: #1a1a1a;
 }
 
+.sspp img { width: 64px; }
+
 body {
     background-color: var(--dark);
     color: var(--offwhite);
@@ -31,7 +33,7 @@ body {
     left: 16px;
     z-index: 100;
 }
-.sspp img { width: 48px; }
+.sspp img { width: 80px; }
 
 #quiz-wrapper {
     position: relative;
