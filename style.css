@@ -90,10 +90,13 @@ html {font-size: 100%;
 .lib{
   background-color:#c8ff00;
   color:  rgb(79, 255, 138);
-
+  display: flex;
+  align-items: flex-start;
 }
 
-
+.lib-main-content{
+  width: 50%;
+}
 
 .album{
   background-repeat: no-repeat;
@@ -348,8 +351,8 @@ tfoot td {
 
 .fall{
   color: #00BF63;
-      min-width: 100%;
-    position: absolute;
+  width: 50%;
+  position: static;
 }
 
 
@@ -362,6 +365,7 @@ tfoot td {
   max-height: 100%;
   /* background-size: contain; */
   background-color: #F3F8D8;
+  background-image: url(Pics/ab.png);
 }
 
 .about{

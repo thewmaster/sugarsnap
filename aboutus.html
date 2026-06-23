@@ -17,13 +17,23 @@
             margin: 0 auto;
         }
 
+        .play-button {
+            background-color:#1aba2c;
+            color: #f5f5f5
+        }
+
+        .play-button:hover {
+            background-color: #f9a8ff
+        }
+
         .select-player-heading {
             text-align: center;
-            font-size: 2rem;
+            font-size: 2.5rem;
             letter-spacing: 0.15em;
             padding: 1.5rem 0 0.5rem;
             max-width: 900px;
             margin: 0 auto;
+            -webkit-text-stroke: 1px rgb(2, 71, 0);
         }
 
         .carousel-section {
@@ -117,6 +127,7 @@
         .player-name {
             font-size: 2rem;
             margin: 0;
+        
         }
 
         .player-stat {
@@ -155,7 +166,7 @@
 <body class="aboutus">
     <a href="index.html"><img class="sspp" src="Pics/bandaid.gif" alt="bandaid"></a>
 
-    <div class="select-player-heading">SELECT PLAYER</div>
+    <div class="select-player-heading"><span>SELECT</span><br><span>PLAYER</span></div>
     <div class="select-player-layout">
 
         <div class="carousel-section">
@@ -166,11 +177,12 @@
                     </svg>
                 </button>
                 <div class="carousel-img-box" id="carousel-img-box">
-                    <img src="Pics/dunc.png" alt="Player 1" class="active">
-                    <img src="Pics/eric.png" alt="Player 2">
-                    <img src="Pics/gard.png" alt="Player 3">
-                    <img src="Pics/matt.png" alt="Player 4">
-                    <img src="Pics/phil.png" alt="Player 5">
+                    <img src="Pics/dunc_player.png" alt="Player 1" class="active">
+                    <img src="Pics/eric_player.png" alt="Player 2">
+                    <img src="Pics/gardo_player.png" alt="Player 3">
+                    <img src="Pics/matt_player.png" alt="Player 4">
+                    <img src="Pics/phil_player.png" alt="Player 5">
+                    <img src="Pics/brandon_player.png" alt="Player 6">
                 </div>
                 <button class="carousel-arrow" id="next-btn" aria-label="Next player">
                     <svg width="24" height="24" viewBox="0 0 24 24">
@@ -199,6 +211,11 @@
                 <label>Weakness</label>
                 <p class="player-weakness" id="p-weakness">Cars</p>
             </div>
+
+            <div style="text-align: center;">
+                <a href="game.html"><button class="play-button">PLAY</button></a>
+            </div>
+
         </div>
 
     </div>
@@ -239,7 +256,14 @@
                 instrument: "Vocals, Violin",
                 likes: "Karaoke, road trips, articles",
                 weakness: "Jars"
-            }
+            },
+            {
+                name: "Brando",
+                age: "29",
+                instrument: "Guitar",
+                likes: "loud noises, strange noises, guitar pedals",
+                weakness: "guitar pedals"
+            },
         ];
 
         let current = 0;
