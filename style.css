@@ -180,60 +180,94 @@ max-height: 100%;
     background-repeat: no-repeat;
     background-size: round;   
 }
+.table-window {
+  position: fixed;
+  top: 510px;
+  left: 20%;
+  max-width: 100%;
+  background: #003316;
+  border: 3px solid #2F6145;
+  z-index: 10;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+}
+ 
+.table-dragbar {
+  cursor: grab;
+  background: #2F6145;
+  color: #00BF63;
+  padding: 8px;
+  text-align: center;
+  user-select: none;
+  font-family: sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+ 
+.table-dragbar:active {
+  cursor: grabbing;
+}
+ 
+.table-scroll {
+  max-height: 600px;
+  overflow-y: auto;
+}
+ 
 table {
   width: auto;
   height: auto;
-  overflow: auto;
-}
-
-table{
-
   color: #00BF63;
-  background: #003316 ;
-    table-layout: auto;
-    border-collapse: collapse;
-    border: 3px solid #2F6145;
-    border-spacing: 20px;
-    max-width: 75%;
-    padding: 10%;
-    position: absolute;
-    bottom: 0px;
-    right: 35%;
-    font-size: 45px;
+  background: #003316;
+  table-layout: auto;
+  border-collapse: collapse;
+  border: 3px solid #2F6145;
+  border-spacing: 20px;
+  padding: 10%;
+  font-size: 45px;
+  /* position/bottom/right removed — the .table-window wrapper now owns positioning */
 }
+ 
 thead th,
 tfoot th {
   font-family: "Rock Salt", cursive;
 }
-table, th, td{
+ 
+table, th, td {
   border: 1px, solid black;
 }
+ 
 th {
   letter-spacing: 2px;
 }
-
+ 
 td {
   letter-spacing: 1px;
 }
-
+ 
 tbody td {
   text-align: center;
 }
-
+ 
 tfoot th {
   text-align: right;
 }
+ 
 thead,
 tfoot {
+  position: sticky;
+  top: 0;
   background: url(leopardskin.jpg);
   color: #00BF63;
   text-shadow: 1px 1px 1px #02582e;
 }
+ 
+thead th {
+  background: #003316;
+  border: 3px solid #2F6145;
+}
 
-thead th,
 tfoot th,
 tfoot td {
-  background: linear-gradient(to bottom, (#04b14f / 10%),(#003316 / 100%));
+  background: linear-gradient(to bottom, #04b14f, #003316);
   border: 3px solid #2F6145;
 }
 

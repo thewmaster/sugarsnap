@@ -184,7 +184,6 @@ table {
 }
 
 table{
-
   color: #00BF63;
   background: #003316 ;
     table-layout: auto;
@@ -348,7 +347,7 @@ tfoot td {
 
 .fall{
   color: #00BF63;
-      min-width: 100%;
+      min-width: 50%;
     position: absolute;
 }
 
