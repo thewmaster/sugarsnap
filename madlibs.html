@@ -1,99 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
-    
-<head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Matt Decker">
-    <meta name="description" content="The music you want to hear">
-    <title>Sugar Snap Peas</title> 
-    <link rel="icon" href="pics/peai.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Matt Decker" />
+    <meta name="description" content="The music you want to hear" />
+    <title>Sugar Snap Peas</title>
+    <link rel="icon" href="pics/peai.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
 
-
-<body class="lib"> 
-
-    <a href="index.html"><img class="sspp" src="Pics/bandaid.gif" alt="bandaid"></a>
+  <body class="lib">
+    <a href="index.html"
+      ><img class="sspp" src="Pics/bandaid.gif" alt="bandaid"
+    /></a>
 
     <div class="lib-main-content">
+      <h1>a mad lib</h1>
+      <h5>fil in if u dare</h5>
 
-        <h1>a mad lib</h1>
-        <h5>fil in if u dare</h5>
+      <form id="madLibForm">
+        <label for="name">Enter yo farmer's name: </label>
+        <input type="text" id="name" required /><br /><br />
 
-        <form id="madLibForm">
-            <label for="name">Enter yo farmer's name: </label>
-            <input type="text" id="name" required><br><br>
-            
-            <label for="adjective">Enter a adjective you would use to describe this fella: </label>
-            <input type="text" id="adjective" required><br><br>
-            
-            <label for="animal">Enter they animal: </label>
-            <input type="text" id="animal" required><br><br>
-            
-            <label for="place">Enter the farm location: </label>
-            <input type="text" id="place" required><br><br>
-            
-            <label for="number">Enter a number between 0 and infinity: </label>
-            <input type="number" id="number" required><br><br>
-            
-            <label for="food">Enter a type of food that only u like: </label>
-            <input type="text" id="food" required><br><br>
-            
-            <label for="weather">Enter a type of weather: </label>
-            <input type="text" id="weather" required><br><br>
-            
-            <button type="submit">Generate the MAD Lib</button>
-        </form>
+        <label for="adjective"
+          >Enter a adjective you would use to describe this fella:
+        </label>
+        <input type="text" id="adjective" required /><br /><br />
 
-        <h2>Mad Lib:</h2>
-        <p id="story"></p>
+        <label for="animal">Enter they animal: </label>
+        <input type="text" id="animal" required /><br /><br />
 
+        <label for="place">Enter the farm location: </label>
+        <input type="text" id="place" required /><br /><br />
+
+        <label for="number">Enter a number between 0 and infinity: </label>
+        <input type="number" id="number" required /><br /><br />
+
+        <label for="food">Enter a type of food that only u like: </label>
+        <input type="text" id="food" required /><br /><br />
+
+        <label for="weather">Enter a type of weather: </label>
+        <input type="text" id="weather" required /><br /><br />
+
+        <button type="submit">Generate the MAD Lib</button>
+      </form>
+
+      <h2>Mad Lib:</h2>
+      <p id="story"></p>
     </div>
 
-    <div class="fall" style= "right: 0; top: 0; margin-top: 10%; max-height: 100%; font-family: Cursive; font-size: 14px;">
-        <marquee style="height:7px;" scrollamount="6" direction="down">I had so much fun filling out this mad lib</marquee>
-        <marquee style="height:75px;" scrollamount="4" direction="down"> Sugar Snap Peas... huge fan</marquee>
-        <marquee style="height:35px;" scrollamount="5" direction="down">i am truly addicted to this music</marquee>
-        <marquee style="height:61px;" direction="down"> deep af</marquee>
-        <marquee style="height:37px;" direction="down">music has never been this green</marquee>
-        <marquee style="height:97px;" scrollamount="7" direction="down">Oh Sugar Snap Peas... ur so cool</marquee>
-        <marquee style="height:31px;" scrollamount="5" direction="down">the bass player slaps</marquee>
-        <marquee style="height:27px;" scrollamount="6" direction="down"> Sugar Snap Peas, wow, just wow</marquee>
-        <marquee style="height:55px;" scrollamount="1" direction="down">I listen to this every day on the way to work</marquee>
-        <marquee style="height:75px;" scrollamount="4" direction="down"> when r u coming to my city</marquee>
-        <marquee style="height:33px;" scrollamount="1" direction="down"> Sugar Snap Peas... I Love You So Much</marquee>
-        <marquee style="height:26px;" scrollamount="7" direction="down">actually 5 stars</marquee>
-        <marquee style="height:20px;" scrollamount="3" direction="down">remember me?</marquee>
-        <marquee style="height:23px;" scrollamount="6" direction="down">remember, the world stood still, breathe</marquee>
-        <marquee style="height:35px;" scrollamount="7" direction="down">simply amazing</marquee>
-        <marquee style="height:31px;" scrollamount="5" direction="down">website designer is peak</marquee>
-        <marquee style="height:30px;" scrollamount="2" direction="down"> Instant classic imo</marquee>
-        <marquee style="height:31px;" scrollamount="5" direction="down">i would buy this</marquee>
-        <marquee style="height:94px;" scrollamount="5" direction="down">let me get your number</marquee>
-        <marquee style="height:37px;" direction="down">very introspective and meaningful...</marquee>
-        <marquee style="height:38px;" scrollamount="5" direction="down">good music by good people</marquee>
+    <div
+      class="fall"
+      style="
+        right: 0;
+        top: 0;
+        margin-top: 10%;
+        max-height: 100%;
+        font-family: Cursive;
+        font-size: 14px;
+      "
+    >
+      <marquee style="height: 7px" scrollamount="6" direction="down">
+        I had so much fun filling out this mad lib
+      </marquee>
+      <marquee style="height: 75px" scrollamount="4" direction="down">
+        Sugar Snap Peas... huge fan
+      </marquee>
+      <marquee style="height: 35px" scrollamount="5" direction="down">
+        i am truly addicted to this music
+      </marquee>
+      <marquee style="height: 61px" direction="down">deep af</marquee>
+      <marquee style="height: 37px" direction="down">
+        music has never been this green
+      </marquee>
+      <marquee style="height: 97px" scrollamount="7" direction="down">
+        Oh Sugar Snap Peas... ur so cool
+      </marquee>
+      <marquee style="height: 31px" scrollamount="5" direction="down">
+        the bass player slaps
+      </marquee>
+      <marquee style="height: 27px" scrollamount="6" direction="down">
+        Sugar Snap Peas, wow, just wow
+      </marquee>
+      <marquee style="height: 55px" scrollamount="1" direction="down">
+        I listen to this every day on the way to work
+      </marquee>
+      <marquee style="height: 75px" scrollamount="4" direction="down">
+        when r u coming to my city
+      </marquee>
+      <marquee style="height: 33px" scrollamount="1" direction="down">
+        Sugar Snap Peas... I Love You So Much
+      </marquee>
+      <marquee style="height: 26px" scrollamount="7" direction="down">
+        actually 5 stars
+      </marquee>
+      <marquee style="height: 20px" scrollamount="3" direction="down">
+        remember me?
+      </marquee>
+      <marquee style="height: 23px" scrollamount="6" direction="down">
+        remember, the world stood still, breathe
+      </marquee>
+      <marquee style="height: 35px" scrollamount="7" direction="down">
+        simply amazing
+      </marquee>
+      <marquee style="height: 31px" scrollamount="5" direction="down">
+        website designer is peak
+      </marquee>
+      <marquee style="height: 30px" scrollamount="2" direction="down">
+        Instant classic imo
+      </marquee>
+      <marquee style="height: 31px" scrollamount="5" direction="down">
+        i would buy this
+      </marquee>
+      <marquee style="height: 94px" scrollamount="5" direction="down">
+        let me get your number
+      </marquee>
+      <marquee style="height: 37px" direction="down">
+        very introspective and meaningful...
+      </marquee>
+      <marquee style="height: 38px" scrollamount="5" direction="down">
+        good music by good people
+      </marquee>
     </div>
 
     <script>
-        document.getElementById("madLibForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+      document
+        .getElementById("madLibForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
 
-            const name = document.getElementById("name").value;
-            const adjective = document.getElementById("adjective").value;
-            const animal = document.getElementById("animal").value;
-            const place = document.getElementById("place").value;
-            const number = document.getElementById("number").value;
-            const food = document.getElementById("food").value;
-            const weather = document.getElementById("weather").value;
+          const name = document.getElementById("name").value;
+          const adjective = document.getElementById("adjective").value;
+          const animal = document.getElementById("animal").value;
+          const place = document.getElementById("place").value;
+          const number = document.getElementById("number").value;
+          const food = document.getElementById("food").value;
+          const weather = document.getElementById("weather").value;
 
-            const story = `${name} is a very ${adjective} farmer. Every day, he goes to his farm to grow peas. One morning, a ${animal} appeared in his field, causing a bit of trouble. But ${name} didn't mind and kept working hard. Later that day, the sky turned ${weather}, and he decided to take a break in the nearby ${place}. He ate ${food} while relaxing and reflecting on how many peas he had grown. By the end of the day, he had harvested ${number} peas. It was a very successful day for ${name}! And ${name} went and slept soundly listening to the new sugar snap peas record knowing his life was long lasting and fufilled! `;
+          const story = `${name} is a very ${adjective} farmer. Every day, he goes to his farm to grow peas. One morning, a ${animal} appeared in his field, causing a bit of trouble. But ${name} didn't mind and kept working hard. Later that day, the sky turned ${weather}, and he decided to take a break in the nearby ${place}. He ate ${food} while relaxing and reflecting on how many peas he had grown. By the end of the day, he had harvested ${number} peas. It was a very successful day for ${name}! And ${name} went and slept soundly listening to the new sugar snap peas record knowing his life was long lasting and fufilled! `;
 
-            document.getElementById("story").textContent = story;
+          document.getElementById("story").textContent = story;
         });
     </script>
-
-</body>
+  </body>
 </html>
