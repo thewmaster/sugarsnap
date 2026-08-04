@@ -64,8 +64,16 @@
         cursor: pointer;
         border-radius: 50%;
       }
+
+      .infinite-img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        margin: 10px auto;
+      }
     </style>
   </head>
+
   <body>
     <div class="gallery" id="gallery"></div>
 
@@ -100,22 +108,6 @@
         "Pics/surp.png",
       ];
 
-      // Function to create gallery items
-      function createGallery() {
-        const galleryContainer = document.getElementById("gallery");
-        galleryContainer.innerHTML = ""; // Clear any existing content
-
-        images.forEach((imgSrc, index) => {
-          const imgElement = document.createElement("img");
-          imgElement.src = imgSrc;
-          imgElement.alt = `Image ${index + 1}`;
-          imgElement.classList.add("gallery-image");
-          imgElement.addEventListener("click", () => openModal(imgSrc));
-
-          galleryContainer.appendChild(imgElement);
-        });
-      }
-
       // Function to open modal with selected image
       function openModal(imgSrc) {
         const modal = document.getElementById("modal");
@@ -134,8 +126,39 @@
       // Event listener for close button
       document.getElementById("closeBtn").addEventListener("click", closeModal);
 
-      // Initialize the gallery when the page loads
-      createGallery();
+      function populate() {
+        const gallery = document.getElementById("gallery");
+        while (true) {
+          let windowRelativeBottom =
+            document.documentElement.getBoundingClientRect().bottom;
+
+          if (
+            windowRelativeBottom >
+            document.documentElement.clientHeight + 100
+          )
+            break;
+
+          const randomSrc = images[Math.floor(Math.random() * images.length)];
+
+          const img = document.createElement("img");
+          img.src = randomSrc;
+          img.alt = "Gallery image";
+          img.classList.add("infinite-img");
+
+          gallery.appendChild(img);
+        }
+      }
+
+      // Single delegated listener — attach once, outside populate()
+      document.body.addEventListener("click", (e) => {
+        if (e.target.classList.contains("infinite-img")) {
+          openModal(e.target.src);
+        }
+      });
+
+      window.addEventListener("scroll", populate);
+
+      populate();
     </script>
     <a
       style="
